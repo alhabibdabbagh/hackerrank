@@ -10,7 +10,7 @@ public class ConvertFromIntegerToString {
     public  static Scanner ss=new Scanner(System.in);
 
     public static void main(String[] args) {
-        
+
         Integer ssa = 0;
         String ww=ssa.toString();
 

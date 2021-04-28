@@ -11,24 +11,15 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public  static Scanner ss=new Scanner(System.in);
+
 
     public static void main(String[] args) {
 
-
-
-        Integer ssa = 0;
-        String ww=ssa.toString();
+        
 
     }
 
 
-    public  static  String s;
-    public  static  int sd=ss.nextInt();
-
-    static {
-    s=String.valueOf(ss);
-    }
 
 
 
