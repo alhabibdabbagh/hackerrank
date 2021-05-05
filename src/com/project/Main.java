@@ -1,9 +1,6 @@
 package com.project;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author habib
@@ -14,7 +11,27 @@ public class Main {
 
     public static void main(String[] args) {
 
+        List siralar = Arrays.asList(100, 100, 100, 100, 55, 66, 88, 99, 75, 55, 66, 77, 5, 64, 23, 48, 56, 23, 23, 23, 23, 1, 1, 1, 1, 2, 4, 69, 3, 0);
+        Collections.sort(siralar, Collections.reverseOrder());// buyukten kucuğa sıralanıyor
+        // Collections.sort(siralar);
+        siralar.forEach(System.out::println);
+        //  HACKERRANK SORUSU CEVABIII sıralma sorusu mesela 3 kişi 100 alınca 1. oluyor ama 99 alanı 4. oluyor .
+        List son = new ArrayList();
+        for (int i = 0; i < siralar.size(); i++) {
+            if (i == 0) {
+                son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
+            } else if (siralar.get(i - 1).equals(siralar.get(i))) {
 
+                son.add(son.get(i - 1));
+            } else {
+                son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
+            }
+
+        }
+        siralar.forEach(System.out::print);
+        System.out.println();
+
+       son.forEach(System.out::println);
     }
 
 
@@ -90,12 +107,12 @@ public class Main {
 
         people.stream().max(Comparator.comparing(Person::getAge));
         people.stream().min(Comparator.comparing(Person::getAge));
-
-        List siralar = Arrays.asList(100, 100, 100, 100, 55, 66, 88, 99, 75, 55, 66, 77, 5, 64, 23, 48, 56, 23, 23, 23, 23, 1, 1, 1, 1, 2, 4, 69, 3, 0);
+ */
+    /*  List siralar = Arrays.asList(100, 100, 100, 100, 55, 66, 88, 99, 75, 55, 66, 77, 5, 64, 23, 48, 56, 23, 23, 23, 23, 1, 1, 1, 1, 2, 4, 69, 3, 0);
         Collections.sort(siralar, Collections.reverseOrder());// buyukten kucuğa sıralanıyor
-        // Collections.sort(siralar);
-        // siralar.forEach(System.out::println);
-        // HACKERRANK SORUSU CEVABIIII
+         Collections.sort(siralar);
+         siralar.forEach(System.out::println);
+       //  HACKERRANK SORUSU CEVABIIII
         List son = new ArrayList();
         for (int i = 0; i < siralar.size(); i++) {
             if (i == 0) {
@@ -107,8 +124,8 @@ public class Main {
                 son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
             }
 
-        }*/
-     /*   siralar.forEach(System.out::print);
+        }
+        siralar.forEach(System.out::print);
         System.out.println();
 
         son.forEach(System.out::println);*/
@@ -123,21 +140,21 @@ public class Main {
 */
 
 
-  /*  private static List<Person> getPeople() {
-        return List.of(
-                new Person("habib", 36, Gender.MALE),
-                new Person("habib", 37, Gender.MALE),
-                new Person("hasan", 38, Gender.MALE),
-                new Person("huseyin", 38, Gender.MALE),
-                new Person("catay", 37, Gender.MALE),
-                new Person("fatma", 46, Gender.FEMALE),
-                new Person("sema", 46, Gender.FEMALE),
-                new Person("fatma", 47, Gender.FEMALE),
-                new Person("dilan", 48, Gender.FEMALE),
-                new Person("sema", 49, Gender.FEMALE)
-        );
-    }
-*/
+    /*  private static List<Person> getPeople() {
+          return List.of(
+                  new Person("habib", 36, Gender.MALE),
+                  new Person("habib", 37, Gender.MALE),
+                  new Person("hasan", 38, Gender.MALE),
+                  new Person("huseyin", 38, Gender.MALE),
+                  new Person("catay", 37, Gender.MALE),
+                  new Person("fatma", 46, Gender.FEMALE),
+                  new Person("sema", 46, Gender.FEMALE),
+                  new Person("fatma", 47, Gender.FEMALE),
+                  new Person("dilan", 48, Gender.FEMALE),
+                  new Person("sema", 49, Gender.FEMALE)
+          );
+      }
+  */
     public static long sonuc() {
         List<Long> kutuAdadi = new ArrayList<>();
         List<Long> birimler = new ArrayList<>();
