@@ -11,27 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List siralar = Arrays.asList(100, 100, 100, 100, 55, 66, 88, 99, 75, 55, 66, 77, 5, 64, 23, 48, 56, 23, 23, 23, 23, 1, 1, 1, 1, 2, 4, 69, 3, 0);
-        Collections.sort(siralar, Collections.reverseOrder());// buyukten kucuğa sıralanıyor
-        // Collections.sort(siralar);
-        siralar.forEach(System.out::println);
-        //  HACKERRANK SORUSU CEVABIII sıralma sorusu mesela 3 kişi 100 alınca 1. oluyor ama 99 alanı 4. oluyor .
-        List son = new ArrayList();
-        for (int i = 0; i < siralar.size(); i++) {
-            if (i == 0) {
-                son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
-            } else if (siralar.get(i - 1).equals(siralar.get(i))) {
-
-                son.add(son.get(i - 1));
-            } else {
-                son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
-            }
-
-        }
-        siralar.forEach(System.out::print);
-        System.out.println();
-
-       son.forEach(System.out::println);
+          System.out.println(sonuc());
     }
 
 
@@ -108,27 +88,7 @@ public class Main {
         people.stream().max(Comparator.comparing(Person::getAge));
         people.stream().min(Comparator.comparing(Person::getAge));
  */
-    /*  List siralar = Arrays.asList(100, 100, 100, 100, 55, 66, 88, 99, 75, 55, 66, 77, 5, 64, 23, 48, 56, 23, 23, 23, 23, 1, 1, 1, 1, 2, 4, 69, 3, 0);
-        Collections.sort(siralar, Collections.reverseOrder());// buyukten kucuğa sıralanıyor
-         Collections.sort(siralar);
-         siralar.forEach(System.out::println);
-       //  HACKERRANK SORUSU CEVABIIII
-        List son = new ArrayList();
-        for (int i = 0; i < siralar.size(); i++) {
-            if (i == 0) {
-                son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
-            } else if (siralar.get(i - 1).equals(siralar.get(i))) {
 
-                son.add(son.get(i - 1));
-            } else {
-                son.add(i + 1);// SON.ADD(İ); SIFIRDAN BAŞLASIN İSTERNİRSE
-            }
-
-        }
-        siralar.forEach(System.out::print);
-        System.out.println();
-
-        son.forEach(System.out::println);*/
  /*       String[] habib = {"1", "h", "3", "4", "5", null, "null", " ", ""};
         Stream<String> s = Stream.of(habib); // böyle bir stream tanımlaması da olurmus
         *//*s.filter(Objects::nonNull).map(e -> e.toUpperCase()).forEach(e -> System.out.println(e));*//*
