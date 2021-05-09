@@ -19,47 +19,44 @@ public class SubstringAndSplit {
 
         System.out.println(getSmallestAndLargest(s, k));
     }
+
     public static String getSmallestAndLargest(String s, int k) {
-        String smallest = "";
+        String smallest = "~";
         String largest = "";
-        String largest1 = "";
-        String[] array=s.split("");
-     //   List<String> ss=new ArrayList<>();
+        String[] array = s.split("");//welcometojavaz => wel,elc,lco,com,ome,..... finf the smallest and largest
 
+        int z = k;
+        int count = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            if (s.length() - 1 > z) {
+                z = i + k;
+                array[count] = s.substring(i, z);
+                count++;
 
-int z=k;
-int count=0;
-        for (int i=0;i<s.length();){
-            if(s.length()-3>k) {
-           //    ss.add(s.substring(i, k));
-                array[count]=s.substring(i, k);
-             /*   i = k;
-                //k += k;
-                k+=z;*/
+            } else {
+
+                array[count] = s.substring(i, s.length());
                 count++;
-            }else {
-               // ss.add(s.substring(i, k));
-                array[count]=s.substring(i, s.length());
-         /*       i = k;
-                k += z;*/
-                count++;
+                break;
             }
         }
-     // for (int i=0;i<ss.size();i++){
-         // ss.get(i).compareTo()
-     // }
-        for (int i=0;i<count-1;i++){
-           if( array[i].compareTo(array[i+1])>0 ){
-               largest=array[i];
-           }else {
-               smallest=array[i+1];
-           }
+        for (int i = 0; i < count; i++) {
+            if(i+1<count){
+            if (array[i].compareTo(array[i + 1]) > 0) {
+                if (array[i].compareTo(largest) > 0)
+                    largest = array[i];
+            } else {
+                if (smallest.compareTo(array[i]) > 0)
+                    smallest = array[i];
+            }
+            }else {
+                if (smallest.compareTo(array[i]) > 0)
+                    smallest = array[i];
+                if (array[i].compareTo(largest) > 0)
+                    largest = array[i];
+            }
         }
-        /*largest= Collections.max(ss);
-        smallest= Collections.min(ss);*/
-        // Complete the function
-        // 'smallest' must be the lexicographically smallest substring of length 'k'
-        // 'largest' must be the lexicographically largest substring of length 'k'
+
 
         return smallest + "\n" + largest;
     }
