@@ -32,6 +32,6 @@ public class SortChanllenge {
         siralar.forEach(System.out::print);
         System.out.println();
 
-        son.forEach(System.out::println);
+        son.forEach(System.out::print);
     }
 }
