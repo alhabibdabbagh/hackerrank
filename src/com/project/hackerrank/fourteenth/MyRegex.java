@@ -21,9 +21,10 @@ class MyRegex1{
     //([0-9]{1,3})((\.)[0-9]{1,3})((\.)[0-9]{1,3})((\.)[0-9]{1,3})
 
    /* 225.33.226.44*/
+    // you have to do review to this code
 
     // another solution
-    String zeroTo255 = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
+    String zeroTo255 = "((\\d{1,2}|(0|1)\\d{2})|(2[0-4]\\d|25[0-5]))";
     public String pattern = zeroTo255 + "\\." + zeroTo255 + "\\." + zeroTo255 + "\\." + zeroTo255;
 }
 
