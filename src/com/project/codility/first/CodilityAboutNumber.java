@@ -1,4 +1,4 @@
-package com.project.codility;
+package com.project.codility.first;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * @author habib
  * @on 24.05.2021 22:27
  */
-public class Codility {
+public class CodilityAboutNumber {
     public static void main(String[] args) {
         int N = -5895;
         List<Integer> ss = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Codility {
         } else {
             while (N > 0) {
                 ss.add(N % 10);
-                search.add(N % 10);
+                search.add(N % 10); //TODO burada kayıt ederken ters olarak kayıt edebilirdin yani sonra stringBuilder reverse gerek yok
                 N /= 10;
             }
         }
@@ -43,7 +43,7 @@ public class Codility {
                 howManayFiveHave++;
             }
         }
-        for (int i = 0; i < howManayFiveHave; i++) {
+        for (int i = 0; i < howManayFiveHave; i++) {//TODO algoritması review gerekiyor
             for (int a : ss) {
                 if (count == 0) {
                     if (a == 5) {
@@ -62,9 +62,9 @@ public class Codility {
                 }
                 as += String.valueOf(a);
             }
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();//TODO burada for'ın dışında olmalı
             stringBuilder.append(as);
-            bigest.add(Integer.parseInt(stringBuilder.reverse().toString()));
+            bigest.add(Integer.parseInt(stringBuilder.reverse().toString()));//TODO gerek olmayabilir
             as = "";
             count = 0;
         }
