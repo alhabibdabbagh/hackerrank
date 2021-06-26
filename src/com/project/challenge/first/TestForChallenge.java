@@ -1,15 +1,13 @@
-package com.project;
+package com.project.challenge.first;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author habib
  * @on 15.06.2021 21:50
  */
-public class ee {
+public class TestForChallenge {
     public static void main(String[] args) {
         System.out.println(Challenge.comperess("aaabbbc  aaaa r"));
     }
@@ -18,7 +16,6 @@ public class ee {
 
 class Challenge {
     public static String comperess(String text) {
-
         List<String> list = new ArrayList<>(Arrays.asList(text.split("")));
         String ss = list.get(0);
         String ss1 = "";

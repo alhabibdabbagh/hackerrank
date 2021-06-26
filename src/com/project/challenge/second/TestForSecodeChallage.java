@@ -1,18 +1,17 @@
-package com.project;
+package com.project.challenge.second;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author habib
  * @on 15.06.2021 23:05
  */
-public class ww {
+public class TestForSecodeChallage {
     public static void main(String[] args) {
-        System.out.println(Challenge1.removeRedundant("aaba kouq bux",1));
+        System.out.println(Challenge.removeRedundant("aaba kouq bux",1));
     }
 }
-class Challenge1{
+class Challenge{
     public static String removeRedundant(String text,int repeats){
 
         List<String> list = new ArrayList<>(Arrays.asList(text.split("")));
