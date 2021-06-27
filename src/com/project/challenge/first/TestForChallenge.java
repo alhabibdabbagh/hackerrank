@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class TestForChallenge {
     public static void main(String[] args) {
-        System.out.println(Challenge.comperess("aaabbbc  aaaa r"));
+        System.out.println(Challenge.comperess("abbb aa  "));
     }
 }
 
@@ -17,83 +17,50 @@ public class TestForChallenge {
 class Challenge {
     public static String comperess(String text) {
         List<String> list = new ArrayList<>(Arrays.asList(text.split("")));
-        String ss = list.get(0);
-        String ss1 = "";
-        List<String> mtList = new ArrayList<>();
         int count = 1;
-        int count2 = list.size();
-        String soluntion = "";
-        String soluntion2 = "";
-        String soluntion3 = "";
-        String soluntion4 = "";
-        boolean isTamam =true;
-        for (int i = 0; i < list.size(); i++) {
-/*            if (ss.equals(list.get(i))) {
-                count++;
-                *//* ss=list.get(i)*//*
-                ;
-                soluntion = "";
-                soluntion = list.get(i) + count;
-            }*//*else if (list.size()-1==i){
-                soluntion=ss+count;
-            }*//* else {
-                ss = list.get(i);
-                count = 1;
+        int listSize = list.size();
+        String result = "";
+        String characterWithCount = "";
+        String repeatKontrol = "";
+        String isRepeatCharacter = "";
+        for (int i = 0; i < list.size(); i++) {//first loop
 
-                if (ss.equals(ss1)) {
-                    soluntion4+=
-                            soluntion3 = "";
-                    soluntion3 = list.get(i) + count;
-                    count++;
-                } else {
-                    ss1 = list.get(i);
-                    soluntion2 = "";
-                    soluntion2 = list.get(i) + count;
-                    count++;
-                }
+            for (int j = i + 1; j < list.size(); j++) { // second loop, for control the first character on secode loop
 
-      *//*          soluntion=soluntion+list.get(i)+count;
-            count=0;*//*
-            }*/
-            for (int j = i + 1; j < list.size(); j++) {
-
-                if (!list.get(i).equals(soluntion4)) {
-                    if (list.get(i).equals(list.get(j))) {
-                        count++;
-                        soluntion3 = list.get(i);
-                        if(list.get(i).equals(" ")){
-                            soluntion=list.get(i);
-                        }else{
-                            soluntion=list.get(i)+count;
+                if (!list.get(i).equals(isRepeatCharacter)) { // aaaa a  aaa  like this is repeat
+                    if (list.get(i).equals(list.get(j))) { // if equals
+                        count++; // count 2
+                        repeatKontrol = list.get(i);
+                        if (list.get(i).equals(" ")) {// isBlank
+                            result = list.get(i);
+                        } else {
+                            result = list.get(i) + count;
                         }
 
 
                     } else {
-                        if(list.get(i).equals(" ")){
-                            soluntion2 +=list.get(i);
-                        }else{
-                            soluntion2 +=list.get(i)+count;
+                        if (list.get(i).equals(" ")) {
+                            characterWithCount += list.get(i);
+                        } else {
+                            characterWithCount += list.get(i) + count;
                         }
-                /*     if (count > 1)
-                         isTamam = false;*/
+
                         count = 1;
                         break;
                     }
-                    // if (!list.get(i).equals(list.get(j))) isTamam = true;
-                } else {
+                } else {// break the loop
                     break;
                 }
 
             }
-            soluntion4 = soluntion3;
+            isRepeatCharacter = repeatKontrol;
 
         }
-        if(!list.get(count2-1).equals(list.get(count2-2))){
-            soluntion2+= list.get(count2-1)+count;
-            soluntion="";
-        }else
-        if (soluntion2.isEmpty())
-            return soluntion;
-        return (!soluntion2.substring(soluntion2.length()-2,soluntion2.length()).equals(soluntion) )?soluntion2+soluntion: soluntion2;
+        if (!list.get(listSize - 1).equals(list.get(listSize - 2))) {
+            characterWithCount += list.get(listSize - 1) + count;
+            result = "";
+        } else if (characterWithCount.isEmpty())
+            return result;
+        return  characterWithCount + result ;
     }
 }
