@@ -1,5 +1,6 @@
 package com.project;
 
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.*;
 
@@ -10,14 +11,29 @@ import java.util.*;
 public class Main {
 
 
-    public static void main(String[] args) {
-
-Date date=new Date();
-date.setYear(2000-1900);
-        System.out.println(date);
-
+    public static void main(String[] args) throws IOException {
+        String newList = readFileLines("/home/habib/Desktop/habib.txt");
+        System.out.println(newList);
 
     }
+
+    public static String readFileLines(String filepath) throws FileNotFoundException, IOException, IOException {
+        File fp = new File(filepath);
+        FileReader fr = new FileReader(fp);
+        BufferedReader br = new BufferedReader(fr);
+
+        ArrayList<String> lines = new ArrayList<>();
+        String line;
+        String line1="";
+        while ((line = br.readLine()) != null ) {
+             String[] hh=line.split(";");
+line1 +=hh[0]+"\n" ;
+        }
+
+        fr.close();
+        return line1;
+    }
+
 
 
 
