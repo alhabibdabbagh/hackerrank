@@ -27,6 +27,7 @@ public class Interview {
                 countsss++;
 
             }
+            //for rebase
             integerIntegerHashMap.put(ints[i], countsss);
             i = i + countsss - 1;
             countsss = 0;
