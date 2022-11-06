@@ -15,7 +15,7 @@ public class Subarrays {
 	        int j = 1;
 	        //5
 	       // 1 -2 4 -5 1
-	        //9
+	        //9s
 
 	        for (int i=0; i<arr.length; i++){
 	            sum =  arr[i];
