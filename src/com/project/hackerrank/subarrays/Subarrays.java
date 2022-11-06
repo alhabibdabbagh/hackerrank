@@ -1,4 +1,4 @@
-package com.project.subarrays;
+package com.project.hackerrank.subarrays;
 
 import java.util.Scanner;
 
