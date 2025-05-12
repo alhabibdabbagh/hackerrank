@@ -1,14 +1,19 @@
 package com.project.examples;
 
-import java.util.HashMap;
-
 /**
  * @author Habib
  * @on 7/17/22 - 11:13 AM
  */
 public class Interview {
     public static void main(String[] args) {
-        HashMap<Integer,Integer> integerIntegerHashMap=new HashMap<>();
+        String firstText = "ab^d12312c";
+        String secondText = "bc'^'^+^!'+^'a";
+
+        boolean isSame = controlTowCharactersSame(firstText, secondText);
+        System.out.println(isSame);
+
+
+      /*  HashMap<Integer,Integer> integerIntegerHashMap=new HashMap<>();
         int[] ints= {1,2,3,4,5,6,1,2,3,42,2,2,2,21};
         java.util.Arrays.sort(ints);
         int countsss=0;
@@ -23,7 +28,23 @@ public class Interview {
             countsss=0;
 
         }
-        System.out.println(integerIntegerHashMap);
+        System.out.println(integerIntegerHashMap);*/
     }
+
+    private static boolean controlTowCharactersSame(String firstText, String secondText) {
+
+        String pattern = "[^a-zAZğüçöĞÜÇÖIı]";
+        firstText = firstText.replaceAll(pattern, "").toUpperCase();
+        secondText = secondText.replaceAll(pattern, "").toUpperCase();
+
+        char[] arr = firstText.toCharArray();
+        char[] arr2 = secondText.toCharArray();
+
+        java.util.Arrays.sort(arr);
+        java.util.Arrays.sort(arr2);
+
+        return java.util.Arrays.equals(arr, arr2);
+    }
+
 
 }
